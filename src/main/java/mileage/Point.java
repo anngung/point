@@ -19,12 +19,16 @@ public class Point {
         private Long remainPoint =1000L;
         private String memberStatus;
         private Long requirePoint;
+<<<<<<< HEAD
         private Long refundPoint;
+=======
+>>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
 
         @PostPersist
         public void onPostPersist() {
                 System.out.println("\n$$$onPostPersist");
 
+<<<<<<< HEAD
 
                 if(this.refundPoint < 0) {
 
@@ -95,6 +99,27 @@ public class Point {
         public void onPreUpdate() {
 
 
+=======
+                if(this.memberStatus.equals("NORMAL")) {
+
+                        PointSaved pointSaved = new PointSaved();
+                        BeanUtils.copyProperties(this, pointSaved);
+                        pointSaved.publishAfterCommit();
+                }else if(this.memberStatus.equals("WITHDRAWAL")){
+                        PointSaved pointSaved = new PointSaved();
+                        BeanUtils.copyProperties(this, pointSaved);
+                        pointSaved.setMemberId(this.getId());
+                        pointSaved.setMemberId(this.getMemberId());
+                        pointSaved.setRemainPoint(0L);
+                        pointSaved.publishAfterCommit();
+                }
+
+
+        }
+
+        @PreUpdate
+        public void onPreUpdate() {
+>>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
                 Long newPoint = remainPoint;
 
                 PointUsed pointUsed = new PointUsed();
@@ -108,6 +133,7 @@ public class Point {
                 }
 
                 System.out.println("\n$$$onPreUpdate : " + newPoint);
+<<<<<<< HEAD
 
 
 
@@ -127,6 +153,8 @@ public class Point {
 
                 }
 
+=======
+>>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
         }
 
         public Long getId() {
@@ -168,6 +196,7 @@ public class Point {
         public void setRequirePoint(Long usePoint) {
                 this.requirePoint = usePoint;
         }
+<<<<<<< HEAD
         public Long getRefundPoint() {
                 return refundPoint;
         }
@@ -175,4 +204,6 @@ public class Point {
         public void setRefundPoint(Long refundPoint) {
                 this.refundPoint = refundPoint;
         }
+=======
+>>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
 }

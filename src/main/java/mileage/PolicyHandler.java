@@ -43,6 +43,7 @@ public class PolicyHandler {
 
         }
     }
+<<<<<<< HEAD
 
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverRefundProcessed_UpdatePointStatus(@Payload RefundProcessed refundProcessed){
@@ -62,4 +63,6 @@ public class PolicyHandler {
     }
 
 
+=======
+>>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
 }
