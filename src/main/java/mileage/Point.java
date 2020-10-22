@@ -19,16 +19,14 @@ public class Point {
         private Long remainPoint =1000L;
         private String memberStatus;
         private Long requirePoint;
-<<<<<<< HEAD
         private Long refundPoint;
-=======
->>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
+
 
         @PostPersist
         public void onPostPersist() {
                 System.out.println("\n$$$onPostPersist");
 
-<<<<<<< HEAD
+
 
                 if(this.refundPoint < 0) {
 
@@ -153,8 +151,7 @@ public class Point {
 
                 }
 
-=======
->>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
+
         }
 
         public Long getId() {
@@ -196,7 +193,7 @@ public class Point {
         public void setRequirePoint(Long usePoint) {
                 this.requirePoint = usePoint;
         }
-<<<<<<< HEAD
+
         public Long getRefundPoint() {
                 return refundPoint;
         }
@@ -204,6 +201,5 @@ public class Point {
         public void setRefundPoint(Long refundPoint) {
                 this.refundPoint = refundPoint;
         }
-=======
->>>>>>> 903a0a75c70a7665bc4642e781aaa4fd4e573ee9
+
 }
