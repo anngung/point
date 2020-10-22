@@ -71,5 +71,5 @@ spring:
 
 api:
   point:
-    url: http://refund:8085
+    url: http://refund:8080
 
